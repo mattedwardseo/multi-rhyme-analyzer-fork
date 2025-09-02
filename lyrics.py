@@ -236,20 +236,20 @@ class Lyrics:
         return self.avg_rhyme_length
 
     def print_song_stats(self):
-        print '------------------------------------------'
-        print "%s\n" % self.filename
+        print('------------------------------------------')
+        print("%s\n" % self.filename)
 
-        print "Avg rhyme length: %.3f\n" % self.avg_rhyme_length
+        print("Avg rhyme length: %.3f\n" % self.avg_rhyme_length)
 
         self.print_rhyme(self.longest_rhyme)
-        print
-        #print '------------------------------------------'
+        print()
+        #print('------------------------------------------')
 
     def print_song_stats_compact(self):
-        print "%.3f  %s" % (self.avg_rhyme_length, self.filename)
+        print("%.3f  %s" % (self.avg_rhyme_length, self.filename))
 
     def print_rhyme(self, rhyme_tuple):
-        print self.get_rhyme_str(rhyme_tuple)
+        print(self.get_rhyme_str(rhyme_tuple))
 
     def get_rhyme_str(self, rhyme_tuple):
         '''
