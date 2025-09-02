@@ -3,9 +3,15 @@ raplysaattori
 
 Raplysaattori (Finnish) / Raplyzer (English) is a software used to detect rhymes and compute their lengths from Finnish or English rap lyrics.
 
+This project is now compatible with Python 3.
+
+Dependencies:
+- numpy
+- espeak (optional, for phonetic transcription of English lyrics without precomputed transcription)
+
 Usage:
 
-python raplyzer.py
+python3 raplyzer.py
 
 (Computes rhyme factor for each artist under 'lyrics_en' directory. See main() in raplyzer.py for other options.)
 
