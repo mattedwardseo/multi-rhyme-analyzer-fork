@@ -38,7 +38,7 @@ def read_lyrics(lyrics_dir='lyrics_en', artist=None, album=None,
     longest_rhymes = []
     max_rhymes = 5
     for a in artists:
-        print "Analyzing artist: %s" % a
+        print("Analyzing artist: %s" % a)
         rls = []
         all_words = []
         if album is not None:
@@ -96,24 +96,24 @@ def read_lyrics(lyrics_dir='lyrics_en', artist=None, album=None,
     uniq_words = uniq_words[order]
     artist_scores = artist_scores[order]
 
-    print "\nBest rhymes"
+    print("\nBest rhymes")
     while len(longest_rhymes) > 0:
         l, rhyme = heapq.heappop(longest_rhymes)
-        print rhyme
+        print(rhyme)
 
-    print "\nBest songs:"
+    print("\nBest songs:")
     song_scores = np.array(song_scores)
     song_names = np.array(song_names)
     song_names = song_names[np.argsort(song_scores)[::-1]]
     song_scores = sorted(song_scores)[::-1]
     for i in range(min(10,len(song_scores))):
-        print '%.3f\t%s' % (song_scores[i], song_names[i])
+        print('%.3f\t%s' % (song_scores[i], song_names[i]))
 
-    print "\nBest artists:"
+    print("\nBest artists:")
     for i in range(len(artist_scores)):
         rx = re.compile(u'_')
         name = rx.sub(' ', artists[i])
-        print '%d.\t%.3f\t%s' % (i+1, artist_scores[i], name)
+        print('%d.\t%.3f\t%s' % (i+1, artist_scores[i], name))
 
 def sort_albums_by_year(albums):
     years = []
